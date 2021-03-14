@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-#include "zeros.h"
+#include "zeros-newton.h"
 
 double f (double x) {
     return pow (x-1.42, 2);
