@@ -13,6 +13,6 @@ double zero (double (*f) (double), double x_0) {
         x_prev = x_curr;
         x_curr = x_next;
         x_next = x_curr - (x_curr - x_prev)/((*f)(x_curr) - (*f)(x_prev)) * f(x_curr);
-    } while (fabs(x_next - x_curr) > eps);
+    } while (fabs(x_next - x_curr)/fabs(x_next + x_curr) > eps);
     return x_next;
 }
