@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
-#include "integrate.h"
+#include <integration/param_typesafe/integrate.h>
 
 /*---------------------------------------------------------*/
 /* Structs and functions for function f */

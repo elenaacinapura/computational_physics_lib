@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "math.h": "c",
+        "integrate.h": "c",
+        "sqrt_babylon.h": "c"
+    }
+}
