@@ -3,10 +3,8 @@
 
 #include <zeros_newton.h>
 
-double zero_newton (double f (double, void *p), double x_0, void *param) {
+double zero_newton (double f (double, void *), double x_0, void *param) {
     assert(isfinite(x_0));
-
-    /* Calculate zero of function f, starting from "guess" x_0 */
     double x_curr = x_0;
     double x_next = x_0 - f(x_curr, param) * 2*EPS / (f(x_curr + EPS, param) - f (x_curr - EPS, param));
     double x_prev;

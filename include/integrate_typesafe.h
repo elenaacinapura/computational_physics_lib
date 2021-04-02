@@ -3,8 +3,8 @@
  * Integration of function - typesafe version.
  */ 
 
-#ifndef __INTEGRATE_H__
-#define __INTEGRATE_H__
+#ifndef __INTEGRATE_TYPESAFE_H__
+#define __INTEGRATE_TYPESAFE_H__
 
 #ifndef EPS
 #define EPS 1e-5
