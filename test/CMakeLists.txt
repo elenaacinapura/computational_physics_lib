@@ -28,3 +28,4 @@ macro(package_add_test TESTNAME)
 endmacro()
 
 package_add_test(sqrt sqrt.cpp)
+package_add_test(print print_routines.cpp)
