@@ -1,6 +1,0 @@
-@PACKAGE_INIT@
-include( "${CMAKE_CURRENT_LIST_DIR}/CompPhyTargets.cmake" )
-set_and_check(COMPPHY_INCLUDE_DIR "@CMAKE_INSTALL_LIBDIR@/include")
-set_and_check(COMPPHY_STATIC_LIB_DIR "@CMAKE_INSTALL_LIBDIR@/lib")
-
-check_required_components(CompPhy)

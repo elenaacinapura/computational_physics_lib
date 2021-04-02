@@ -54,3 +54,4 @@ dkms.conf
 # Various output files
 *.png
 *.pdf
+build/
