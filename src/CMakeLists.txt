@@ -1,9 +1,10 @@
 add_library(compphy-lib STATIC
                         gnuplot_i/gnuplot_i.c
-                        integration/param_notypesafe/integrate.c
-                        integration/param_typesafe/integrate.c
+                        integrate_notypesafe/integrate_notypesafe.c
+                        integrate_typesafe/integrate_typesafe.c
                         inv_sqrt/inv_sqrt.c
                         lennard_jones/lennard_jones.c
+                        numerov/numerov.c
                         print_routines/print_routines.c
                         sqrt/sqrt_babylon.c
                         verlet/verlet.c
