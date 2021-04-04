@@ -7,7 +7,6 @@ extern "C" {
 
 namespace {
     TEST (Verlet, Verlet_2D) {
-        verlet_1D()
     }
 }
 

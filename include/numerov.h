@@ -1,6 +1,8 @@
 #ifndef __NUMEROV_H__
 #define __NUMEROV_H__
 
+#include <complex.h>
+
 /**
  * @brief Step of the numerov algorithm to solve schrodinger equation.
  * 
@@ -16,6 +18,6 @@
  * 
  * @return
  */
-void numerov_1D (double *x, double *psi_curr, double *psi_prec, double dx, double F (double, void *), void *param);
+void numerov_1D (double *x, complex double *psi_curr, complex double *psi_prec, double dx, double F (double, void *), void *param);
 
 #endif

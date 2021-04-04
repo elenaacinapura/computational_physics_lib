@@ -14,7 +14,7 @@ add_library(compphy-lib STATIC
 target_include_directories(compphy-lib PUBLIC
     $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>)
-target_compile_options(compphy-lib PRIVATE -Wall -O3 -march=native -ffast-math)
+target_compile_options(compphy-lib PRIVATE -Wall -O3 -march=native -ffast-math -std=c11)
 target_link_libraries(compphy-lib m)
 
 # Collect header files in include dir for installation
