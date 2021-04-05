@@ -18,6 +18,6 @@
  * 
  * @return
  */
-void numerov_1D (double *x, complex double *psi_curr, complex double *psi_prec, double dx, double F (double, void *), void *param);
+double complex numerov_1D (double x, complex double psi_curr, complex double psi_prec, double dx, double F (double, void *), void *param);
 
 #endif
