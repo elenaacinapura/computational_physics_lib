@@ -6,6 +6,18 @@ void verlet_1D(double *x, double *v, double dt, double acc(double, void *), void
 	*v += dt / 2 * acc(*x, param);
 }
 
+void verlet_2D(double x[], double v[], double a[], double dt, void calculate_acc(double[], double[], void *),
+	       void *param) {
+	for (int i = 0; i < 2; i++) {
+		v[i] += dt / 2 * a[i];
+		x[i] += dt * v[i];
+	}
+	calculate_acc(x, a, param);
+	for (int i = 0; i < 2; i++) {
+		v[i] += dt / 2 * a[i];
+	}
+}
+
 void verlet_3D(double x[], double v[], double a[], double dt, void calculate_acc(double[], double[], void *),
 	       void *param) {
 	for (int i = 0; i < 3; i++) {

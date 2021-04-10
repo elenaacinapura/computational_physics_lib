@@ -15,6 +15,22 @@
 void verlet_1D(double *x, double *v, double dt, double acc(double, void *), void *param);
 
 /**
+ * @brief Verlet step for single particle in 2 dimensions
+ *
+ * @param x array with the position's components
+ * @param v array with the velocity's components
+ * @param a array with the acceleration's components
+ * @param dt time increment
+ * @param calculate_acc function that takes the position and acceleration arrays and a parameter struct, and modifies
+ * the acceleration based on the current position
+ * @param param pointer to struct of the parameters of calculate_acc()
+ *
+ * @return
+ */
+void verlet_2D(double x[], double v[], double a[], double dt, void calculate_acc(double[], double[], void *),
+	       void *param);
+
+/**
  * @brief Verlet step for single particle in 3 dimensions
  *
  * @param x array with the position's components
