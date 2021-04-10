@@ -4,7 +4,7 @@ project(computational-physics)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
-add_compile_definitions(EPS=1e-5)
+add_compile_definitions(EPS=1e-6)
 
 add_subdirectory(src)
 
