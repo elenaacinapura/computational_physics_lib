@@ -4,6 +4,7 @@ add_library(compphy-lib STATIC
                         integrate_typesafe/integrate_typesafe.c
                         inv_sqrt/inv_sqrt.c
                         lennard_jones/lennard_jones.c
+                        minimum/minimum.c
                         numerov/numerov.c
                         print_routines/print_routines.c
                         sqrt/sqrt_babylon.c

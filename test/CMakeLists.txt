@@ -29,3 +29,4 @@ endmacro()
 
 package_add_test(sqrt sqrt.cpp)
 package_add_test(print print_routines.cpp)
+package_add_test(minimum minimum.cpp)
