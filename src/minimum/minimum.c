@@ -16,7 +16,6 @@ double minimum (double f (double, void *), double low, double high, void *p) {
         } else {
             x1 = x2;
         }
-        printf("x1 = %lf, x2 = %lf, x3 = %lf, x4 = %lf\n", x1, x2, x3, x4);
     }
 
     return x1;
