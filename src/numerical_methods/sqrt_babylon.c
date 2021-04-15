@@ -1,7 +1,7 @@
 #include <assert.h>
 #include <math.h>
 
-#include <sqrt_babylon.h>
+#include <numerical_methods/sqrt_babylon.h>
 
 double sqrt_babylon(double x) {
 	assert(isfinite(x));

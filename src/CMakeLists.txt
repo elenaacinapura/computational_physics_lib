@@ -1,15 +1,16 @@
 add_library(compphy-lib STATIC
                         gnuplot_i/gnuplot_i.c
-                        integrate_notypesafe/integrate_notypesafe.c
-                        integrate_typesafe/integrate_typesafe.c
-                        inv_sqrt/inv_sqrt.c
-                        lennard_jones/lennard_jones.c
-                        minimum/minimum.c
-                        numerov/numerov.c
+                        differential_eq/numerov.c
+                        differential_eq/verlet.c
+                        numerical_methods/integrate_notypesafe.c
+                        numerical_methods/integrate_typesafe.c
+                        numerical_methods/inv_sqrt.c
+                        numerical_methods/minimum.c
+                        numerical_methods/sqrt_babylon.c
+                        numerical_methods/zero_newton.c
+                        physics/polar.c
+                        physics/lennard_jones.c
                         print_routines/print_routines.c
-                        sqrt/sqrt_babylon.c
-                        verlet/verlet.c
-                        zeros_newton/zeros_newton.c
 )
 
 target_include_directories(compphy-lib PUBLIC

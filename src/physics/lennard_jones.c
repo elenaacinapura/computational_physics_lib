@@ -1,12 +1,8 @@
-#include <lennard_jones.h>
+#include <physics/lennard_jones.h>
 
 #include <assert.h>
 #include <math.h>
 
-
-double r_polar(double x, double y, double z) {
-	return sqrt(x * x + y * y + z * z);
-}
 
 double lj_potential(double r, void *p) {
 	assert(r > 0.0);

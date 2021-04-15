@@ -1,7 +1,8 @@
 #include <assert.h>
 #include <math.h>
-#include <minimum.h>
 #include <stdio.h>
+
+#include <numerical_methods/minimum.h>
 
 double minimum(double f(double, void *), double low, double high, void *p) {
 	assert(low <= high);

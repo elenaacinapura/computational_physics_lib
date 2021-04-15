@@ -12,16 +12,7 @@ struct Struct_Lj {
  */
 struct Struct_Lj struct_lj;
 
-/**
- * @brief Calculate polar radius 
- * 
- * @param x x coordinate
- * @param y y coordinate
- * @param z z coordinate
- * 
- * @return sqrt(x * x + y * y + z * z)
- */
-double r_polar(double x, double y, double z);
+
 
 /**
  * @brief Calculate the Lennard-Jones potential

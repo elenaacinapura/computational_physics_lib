@@ -1,5 +1,5 @@
-#ifndef __ZEROS_H__
-#define __ZEROS_H__
+#ifndef __ZERO_H__
+#define __ZERO_H__
 
 #ifndef EPS
 #define EPS 1e-5

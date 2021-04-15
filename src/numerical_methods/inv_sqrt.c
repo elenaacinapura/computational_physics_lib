@@ -1,7 +1,7 @@
 #include <assert.h>
 #include <math.h>
 
-#include <inv_sqrt.h>
+#include <numerical_methods/inv_sqrt.h>
 
 double inv_sqrt (double x) {
     assert(isfinite(x));

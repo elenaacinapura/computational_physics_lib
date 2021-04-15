@@ -1,7 +1,7 @@
 #include <assert.h>
 #include <math.h>
 
-#include <zeros_newton.h>
+#include <numerical_methods/zero_newton.h>
 
 double zero_newton (double f (double, void *), double x_0, void *param) {
     assert(isfinite(x_0));
