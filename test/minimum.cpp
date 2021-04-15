@@ -3,7 +3,7 @@
 #include <random>
 
 extern "C" {
-#include <minimum.h>
+#include <numerical_methods/minimum.h>
 }
 
 struct Param {

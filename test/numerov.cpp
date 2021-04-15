@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 extern "C" {
-#include <numerov.h>
+#include <differential_eq/numerov.h>
 }
 
 namespace {

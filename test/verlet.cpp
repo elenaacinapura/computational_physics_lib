@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 extern "C" {
-#include <verlet.h>
+#include <differential_eq/verlet.h>
 }
 
 namespace {
