@@ -3,6 +3,7 @@ add_library(compphy-lib STATIC
                         differential_eq/numerov.c
                         differential_eq/verlet.c
                         linear_algebra/blas_wrappers.c
+                        linear_algebra/array_routines.c
                         numerical_methods/integrate_notypesafe.c
                         numerical_methods/integrate_typesafe.c
                         numerical_methods/inv_sqrt.c

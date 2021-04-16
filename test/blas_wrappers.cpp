@@ -3,6 +3,7 @@
 extern "C" {
 #include <cblas.h>
 #include <linear_algebra/blas_wrappers.h>
+#include <linear_algebra/array_routines.h>
 }
 
 namespace {
