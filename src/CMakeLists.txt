@@ -9,6 +9,7 @@ add_library(compphy-lib STATIC
                         numerical_methods/inv_sqrt.c
                         numerical_methods/minimum.c
                         numerical_methods/sqrt_babylon.c
+                        numerical_methods/zero_bisection.c
                         numerical_methods/zero_newton.c
                         physics/polar.c
                         physics/lennard_jones.c
