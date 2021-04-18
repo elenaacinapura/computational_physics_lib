@@ -14,7 +14,7 @@ double zero_bisection(double f(double, void *), double low, double high, void *p
 		return high;
 	}
 
-	while (fabs(high - low) / (fabs(high + low) > EPS)) {
+	while (fabs(high - low) / (fabs(high + low)) > EPS) {
 		double mid = (high + low) / 2.0;
 		if (f(mid, param) == 0.0) {
 			return mid;
