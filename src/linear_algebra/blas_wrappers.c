@@ -3,6 +3,9 @@
 #include <assert.h>
 #include <cblas.h>
 
+void vec_copy (int N, double src[], double dest[]){
+	cblas_dcopy(N, (double *)src, 1, (double *)dest, 1);
+}
 
 void mat_vec_mul(int m, int n, double *M, double *v, double *res) {
 	assert(m > 0 && n > 0);

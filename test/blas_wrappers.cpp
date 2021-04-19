@@ -7,6 +7,16 @@ extern "C" {
 }
 
 namespace {
+TEST(BlasWrappers, VecCopy) {
+	int n = 3;
+	double v[3] = {2, 3, 4};
+	double res[n];
+	vec_copy(n, v, res);
+	double expected[3] = {2, 3, 4};
+	for (int i = 0; i < n; ++i) {
+		EXPECT_EQ(res[i], expected[i]) << "Vectors res and expected differ at index " << i;
+	}
+}
 TEST(BlasWrappers, MatVecMul) {
 	int n = 3;
 	double M[3][3] = {{1, 0, 0}, {0, 1, 0}, {0, 0, 0}};
