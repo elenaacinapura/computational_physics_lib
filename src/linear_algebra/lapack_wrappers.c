@@ -2,35 +2,75 @@
 #include <linear_algebra/lapack_wrappers.h>
 
 #include <complex.h>
+#include <assert.h>
 #include <stdlib.h>
 
-void zheev_(char *jobz, char *uplo, int *n, _Complex double (*m), int *lda, double *w, _Complex double (*work), int *lwork, double *rwork, int *info);
+void zheev_(char *jobz, char *uplo, int *n, _Complex double(*m), int *lda, double *w, _Complex double(*work),
+	    int *lwork, double *rwork, int *info);
 
-int diag_symm_complex(const int dim, _Complex double (*M), _Complex double (*res_eigvec), double *res_eigval) {
+void dstedc_(char *compz, int *n, double *D, double *E, double *Z, int *ldz, double *work, int *lwork, int *iwork,
+	     int *liwork, int *info);
+
+/*-----------------------------------------------------------------------------------------------------------------*/
+
+int diag_tridiag_double(const int dim, double *diag, double *subdiag, double *res_eigvec, double *res_eigval) {
+	assert(dim >= 0);
+	mat_copy(1, dim, diag, res_eigval);
+	double subdiag_copy[dim - 1];
+	mat_copy(1, dim - 1, subdiag, subdiag_copy);
+
+	char COMPZ = 'I';
+	int N = dim;
+	int LDZ = dim;
+
+	double *WORK;
+	double tmpwork; /* optimal LWORK */
+	int LWORK = -1; /* query */
+	int *IWORK;
+	int tmpiwork;	 /* optimal LIWORK */
+	int LIWORK = -1; /* query */
+	int INFO;
+
+	dstedc_(&COMPZ, &N, res_eigval, subdiag_copy, res_eigvec, &LDZ, &tmpwork, &LWORK, &tmpiwork, &LIWORK, &INFO);
+
+	LWORK = (int)tmpwork;
+	WORK = (double *)malloc(LWORK * sizeof(double));
+	LIWORK = tmpiwork;
+	IWORK = (int *)malloc(LIWORK * sizeof(int));
+
+	dstedc_(&COMPZ, &N, res_eigval, subdiag_copy, res_eigvec, &LDZ, WORK, &LWORK, IWORK, &LIWORK, &INFO);
+
+	free(WORK);
+	free(IWORK);
+
+	return INFO;
+}
+
+int diag_symm_complex(const int dim, _Complex double(*M), _Complex double(*res_eigvec), double *res_eigval) {
 	mat_copy_complex(dim, dim, M, res_eigvec);
 
 	char JOBZ = 'V'; /* eigenvalues and eigenvectors */
 	char UPLO = 'L'; /* lower triangular FORTRAN = upper triangular C */
 	int LDA = dim;
-    double *RWORK;
+	double *RWORK;
 	complex double *WORK;
 	int LWORK;
 	int INFO;
 	double complex tmp = 0.0;
-    double tmp1 = 0.0;
+	double tmp1 = 0.0;
 
 	/* get the optimal work array size */
 	LWORK = -1;
-	zheev_(&JOBZ,&UPLO,&LDA, res_eigvec, &LDA, res_eigval, &tmp, &LWORK, &tmp1, &INFO);
+	zheev_(&JOBZ, &UPLO, &LDA, res_eigvec, &LDA, res_eigval, &tmp, &LWORK, &tmp1, &INFO);
 
 	LWORK = (int)(tmp);
 	WORK = (complex double *)malloc(LWORK * sizeof(complex double));
-    RWORK = (double *)malloc(LWORK * sizeof(double));
+	RWORK = (double *)malloc(LWORK * sizeof(double));
 
 	/* call to the LAPACK subroutine */
-	zheev_(&JOBZ,&UPLO,&LDA, res_eigvec, &LDA, res_eigval, WORK, &LWORK, RWORK, &INFO);
+	zheev_(&JOBZ, &UPLO, &LDA, res_eigvec, &LDA, res_eigval, WORK, &LWORK, RWORK, &INFO);
 
 	free(WORK);
-    free(RWORK);
-	return (INFO);
+	free(RWORK);
+	return INFO;
 }
