@@ -31,6 +31,6 @@ double complex numerov_1D (double x, complex double psi_curr, complex double psi
  * 
  * @return
  */
-void execute_numerov (double x[], complex double psi[], int dim, double dx, double F (double, void *), void *p);
+void execute_numerov_complex (double x[], complex double psi[], int dim, double dx, double F (double, void *), void *p);
 
 #endif
