@@ -29,7 +29,7 @@ TEST(LapackWrappers, DiagHermit) {
 	ASSERT_EQ(info, 0);
 // 	fprint_mat_complex(stdout, (_Complex double *)res_eigvec, dim, dim);
 // 	fprint_mat(stdout, (double *)res_eigval, 1, dim);
-// }
+}
 
 TEST(LapackWrappers, DiagTridiag) {
 	int n = 1024;

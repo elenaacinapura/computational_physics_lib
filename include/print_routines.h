@@ -23,6 +23,6 @@ void fprint_double (FILE *file, double d);
  * 
  * @return
  */
-void fprint_mat (FILE *file, double *m, int n_rows, int n_cols);
+void fprint_array (FILE *file, double *m, int n_rows, int n_cols);
 
 #endif
