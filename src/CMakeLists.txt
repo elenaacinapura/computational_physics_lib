@@ -1,6 +1,7 @@
 add_library(compphy-lib STATIC
                         gnuplot_i/gnuplot_i.c
                         differential_eq/numerov.c
+                        differential_eq/runge_kutta.c
                         differential_eq/verlet.c
                         linear_algebra/array_routines.c
                         linear_algebra/blas_wrappers.c
