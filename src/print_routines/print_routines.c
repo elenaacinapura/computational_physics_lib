@@ -6,6 +6,10 @@ void fprint_double (FILE *file, double d) {
 	fprintf(file, "%lf\t", d);
 }
 
+void fprint_double_newline (FILE *file, double d) {
+	fprintf(file, "%lf\n", d);
+}
+
 void fprint_array (FILE *file, double *m, int n_rows, int n_cols) {
 	for (int i = 0; i < n_rows; i++) {
 		for (int j = 0; j < n_cols; j++) {
