@@ -11,7 +11,7 @@ set_target_properties(gmock PROPERTIES FOLDER extern)
 set_target_properties(gmock_main PROPERTIES FOLDER extern)
 
 macro(package_add_test TESTNAME)
-    # create an exectuable in which the tests will be stored
+    # create an executable in which the tests will be stored
     add_executable(${TESTNAME} ${ARGN} ${SOURCES})
     # link the Google test infrastructure, mocking library, and a default main fuction to
     # the test executable.  Remove g_test_main if writing your own main function.
@@ -31,5 +31,6 @@ endmacro()
 # package_add_test(print print_routines.cpp)
 # package_add_test(minimum minimum.cpp)
 package_add_test(blas_wrappers blas_wrappers.cpp)
-package_add_test(zero_bisection zero_bisection.cpp)
+# package_add_test(zero_bisection zero_bisection.cpp)
 package_add_test(lapack_wrappers lapack_wrappers.cpp)
+package_add_test(numerical_methods numerical_methods.cpp)

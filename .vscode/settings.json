@@ -3,6 +3,7 @@
         "math.h": "c",
         "integrate.h": "c",
         "sqrt_babylon.h": "c",
-        "array_routines.h": "c"
+        "array_routines.h": "c",
+        "cmath": "cpp"
     }
 }
