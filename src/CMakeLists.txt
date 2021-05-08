@@ -7,6 +7,7 @@ add_library(compphy-lib STATIC
                         linear_algebra/blas_wrappers.c
                         linear_algebra/lapack_wrappers.c
                         numerical_methods/derivative.c
+                        numerical_methods/fft_radial.c
                         numerical_methods/integrate_notypesafe.c
                         numerical_methods/integrate_typesafe.c
                         numerical_methods/inv_sqrt.c
