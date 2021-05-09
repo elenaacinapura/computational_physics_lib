@@ -24,6 +24,7 @@ void fft_radial_forward (double f[], int N, double R) {
 
     /* Take imaginary value and divide by K = pi*k/R */
     for (int k = 1; k < N; k++) {
+        assert(isfinite(tmp[2*k + 1]));
         f[2*k] =  -R/(M_PI * k) * tmp[2*k + 1];
     }  
 
@@ -32,7 +33,7 @@ void fft_radial_forward (double f[], int N, double R) {
 }    
 
 void fft_radial_inverse (double f[], int N, double R) {
-    
+
     double f_0 = 0.0;   /* Value of the antitransform in n=0 */
     /* Multiply by k */
     for (int i = 0; i < N; i++) {
