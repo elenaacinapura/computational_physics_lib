@@ -32,8 +32,7 @@ void fft_radial_forward (double f[], int N, double R) {
 }    
 
 void fft_radial_inverse (double f[], int N, double R) {
-    double dr = R/N;
-
+    
     double f_0 = 0.0;   /* Value of the antitransform in n=0 */
     /* Multiply by k */
     for (int i = 0; i < N; i++) {
