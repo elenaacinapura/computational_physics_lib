@@ -24,7 +24,6 @@ void fft_radial_forward (double f[], int N, double R) {
 
     /* Take imaginary value and divide by K = pi*k/R */
     for (int k = 1; k < N; k++) {
-        assert(isfinite(tmp[2*k + 1]));
         f[2*k] =  -R/(M_PI * k) * tmp[2*k + 1];
     }  
 
