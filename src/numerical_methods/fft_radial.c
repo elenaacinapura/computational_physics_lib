@@ -34,7 +34,7 @@ void fft_radial_inverse (double f[], int N, double R) {
     double tmp [2*N];
     /* Multiply by k */
     for (int i = 0; i < N; i++) {
-        double k = M_PI * i / R;
+        double k = M_PI * (double)(i) / R;
         f_0 += 1.0/N * k*k * f[i];
         tmp[2*i] = k * f[i];
         tmp[2*i + 1] = 0.0;
@@ -46,7 +46,7 @@ void fft_radial_inverse (double f[], int N, double R) {
     /* Take imaginary value and divide by r = n*R/N */
     for (int n = 1; n < N; n++) {
         f[n] =  -1.0/N * tmp[2*n + 1];
-        f[n] *= N / (n * R);
+        f[n] *= (double)(N) / (n * R);
     }  
     /* Assign the value for n=0 */ 
     f[0] = f_0;
